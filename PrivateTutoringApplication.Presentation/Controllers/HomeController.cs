@@ -23,14 +23,16 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         private readonly IKullaniciService _kullaniciService;
         private readonly ITutorLessonService _tutorLessonService;
         private readonly ILessonService _lessonService;
+        private readonly IScheduleService _scheduleService;
         private IConfiguration Configuration { get; }
 
-        public HomeController(IKullaniciService kullaniciService, ITutorLessonService tutorLessonService, IConfiguration configuration, ILessonService lessonService)
+        public HomeController(IKullaniciService kullaniciService, ITutorLessonService tutorLessonService, IConfiguration configuration, ILessonService lessonService, IScheduleService scheduleService)
         {
             Configuration = configuration;
             _kullaniciService = kullaniciService;
             _tutorLessonService = tutorLessonService;
             _lessonService = lessonService;
+            _scheduleService = scheduleService;
         }
 
         [HttpGet]
@@ -71,6 +73,26 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         public ActionResult Contact()
         {
             return View();
+        }
+
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult About()
+        {
+            var teachers = _kullaniciService.GetByTeachers();
+            var students = _kullaniciService.GetByStudents();
+            var lessons = _lessonService.GetLessons();
+            var appointments = _scheduleService.GetByAll();
+
+            AboutCO model = new AboutCO()
+            {
+                TeacherCount = teachers.Count(),
+                StudentCount = students.Count(),
+                LessonCount = lessons.Count(),
+                AppointmentCount = appointments.Count()
+            };
+
+            return View(model);
         }
 
 

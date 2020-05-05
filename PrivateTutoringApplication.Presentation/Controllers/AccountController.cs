@@ -274,7 +274,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
 
             _kullaniciService.Update(model);
 
-            return RedirectToAction("GetTeacher", new RouteValueDictionary(new { controller = "Account", action = "GetTeacher", guid = user.Guid }));
+            return RedirectToAction("GetByUser", new RouteValueDictionary(new { controller = "Account", action = "GetByUser", Model = user }));
         }
 
         [Authorize]

@@ -119,6 +119,9 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         public ActionResult AddLessonHours(Guid guid)
         {
             var tutorSchedule = _tutorScheduleService.GetByGuid(guid);
+
+            TempData["TutorScheduleId"] = tutorSchedule.Id;
+
             return View(tutorSchedule);
         }
 
@@ -128,7 +131,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         [TypeFilter(typeof(YetkiKontrol), Arguments = new object[] { new int[] { (int)Yetkiler.TEACHER } })]
         public ActionResult AddLessonHours(TutorScheduleDTO model)
         {
-            var tutorSchedule = _tutorScheduleService.GetById(model.Id);
+            var tutorSchedule = _tutorScheduleService.GetById(Convert.ToInt32(TempData["TutorScheduleId"]));
             model.Guid = tutorSchedule.Guid;
             model.EkleyenId = tutorSchedule.EkleyenId;
             model.EklenmeZamani = tutorSchedule.EklenmeZamani;
@@ -136,6 +139,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
             model.Silindi = tutorSchedule.Silindi;
             model.KullaniciId = tutorSchedule.KullaniciId;
             model.LessonId = tutorSchedule.LessonId;
+            model.Id = tutorSchedule.Id;
 
             _tutorScheduleService.Update(model);
             var lesson = _lessonService.GetById(tutorSchedule.LessonId);

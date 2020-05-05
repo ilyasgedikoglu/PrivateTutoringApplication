@@ -80,6 +80,15 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         public IActionResult Create(Guid guid) //tutorlesson guid
         {
             var tutorLesson = _tutorLessonService.GetByGuid(guid);
+            var deletedTutorSchedule = _tutorScheduleService.GetTutorSchedules();
+            foreach (var item in deletedTutorSchedule)
+            {
+                if (item.LessonStartDate < DateTime.Now)
+                {
+                    _tutorScheduleService.Delete(item.Id);
+                }
+            }
+
             var tutorSchedule = _tutorScheduleService.GetTutorSchedules().Where(x => x.LessonId == tutorLesson.LessonId && x.KullaniciId == tutorLesson.KullaniciId).ToList();
 
             ViewBag.TutorSchedules = tutorSchedule;
