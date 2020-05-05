@@ -66,6 +66,13 @@ namespace PrivateTutoringApplication.Presentation.Controllers
             return View(lessons);
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Contact()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
