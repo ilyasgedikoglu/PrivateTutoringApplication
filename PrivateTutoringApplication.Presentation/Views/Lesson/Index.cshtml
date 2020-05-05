@@ -1,0 +1,60 @@
+﻿@model IEnumerable<PrivateTutoringApplication.Shared.DTO.LessonDTO>
+
+@{
+    ViewData["Title"] = "Lessons";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="courses.html">Our Courses</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary "></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<!-- courses -->
+<section class="section">
+    <div class="container">
+        <!-- course list -->
+        <div class="row justify-content-center">
+            @foreach (var item in Model)
+            {
+                <!-- course item -->
+                <div class="col-lg-4 col-sm-6 mb-5">
+                    <div class="card p-0 border-primary rounded-0 hover-shadow">
+                        <img class="card-img-top rounded-0" src="\@item.Resim" alt="course thumb">
+                        <div class="card-body">
+                            <ul class="list-inline mb-2">
+                                <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>@item.EklenmeZamani</li>
+                                <li class="list-inline-item"><a class="text-color" href="#">@item.Category</a></li>
+                            </ul>
+                            @Html.ActionLink(@item.Name, "GetLesson2", new { guid = item.Guid }, new { @class = "card-title" })
+
+                        <p class="card-text mb-4">
+                            @if (item.Definition.Length >= 100)
+                            {
+                                @item.Definition.Substring(0, 100)
+                            }
+                            else
+                            {
+                                @item.Definition
+                            }
+                        </p>
+                            @Html.ActionLink("Apply Now", "GetLesson2", new { guid = item.Guid }, new { @class = "btn btn-primary btn-sm" })
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <!-- /course list -->
+    </div>
+</section>
+<!-- /courses -->

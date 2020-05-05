@@ -1,0 +1,78 @@
+﻿@model PrivateTutoringApplication.Shared.CriteriaObject.TeacherLessonCO
+
+@{
+    ViewData["Title"] = "GetTeacher";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="~/educenter/images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"> @Html.ActionLink("Our Teacher", "GetTeachers", new { @class = "h2 text-primary font-secondary" })</li>
+                    <li class="list-inline-item text-white h3 font-secondary nasted">@Html.LabelFor(m => m.Kullanici.Ad) @Html.LabelFor(m => m.Kullanici.Soyad)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<!-- teacher details -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-5 mb-5">
+                <img class="img-fluid w-100" src="\@Html.DisplayFor(x=>x.Kullanici.Resim)" alt="teacher">
+            </div>
+            <div class="col-md-6 mb-5">
+                <h3>@Html.DisplayFor(x => x.Kullanici.Ad) @Html.DisplayFor(x => x.Kullanici.Soyad)</h3>
+                <h6 class="text-color">@Html.DisplayFor(x => x.Kullanici.Job)</h6>
+                <p class="mb-5">
+                    @Html.DisplayFor(x => x.Kullanici.Aciklama)
+                </p>
+                <div class="row">
+                    <div class="col-md-6 mb-5 mb-md-0">
+                        <h4 class="mb-4">CONTACT INFO:</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3"><a class="text-color" href="mailto:@Html.DisplayFor(x=>x.Kullanici.Email)"><i class="ti-email mr-2"></i>@Html.DisplayFor(x=>x.Kullanici.Email)</a></li>
+                            <li class="mb-3"><a class="text-color" href="callto:@Html.DisplayFor(x=>x.Kullanici.TelephoneNumber)"><i class="ti-mobile mr-2"></i>@Html.DisplayFor(x => x.Kullanici.TelephoneNumber)</a></li>
+                            <li class="mb-3">
+                                <a class="text-color" href="#">
+                                    <i class="ti-location-pin mr-2"></i>@Html.DisplayFor(x => x.Kullanici.Address)
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-4">SUMMARY OF ACTIVITIES/INTERESTS</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-3">@Html.DisplayFor(x => x.Kullanici.Job) - @Html.DisplayFor(x => x.Kullanici.GraduationStatus)</li>
+                            <li class="mb-3">@Html.DisplayFor(x => x.Kullanici.School) - @Html.DisplayFor(x => x.Kullanici.Department)</li>
+                            <li class="mb-3">@Html.DisplayFor(x => x.Kullanici.UpperSchool) - @Html.DisplayFor(x => x.Kullanici.UpperDepartment)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <h4 class="mb-4">BIOGRAPHY</h4>
+                <p class="mb-5">
+                    @Html.DisplayFor(x => x.Kullanici.Biyografi)
+                </p>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-12">
+                <h4 class="mb-4">COURSES</h4>
+                @if (@ViewBag.YetkiId == 3 && @ViewBag.UserId == Model.Kullanici.Id)
+                {
+                    @Html.ActionLink("Add Lesson", "Create", "Lesson", new { @class = "mb-4 btn btn-info" })
+                }
+            </div>
+            @Html.Partial("TeacherLesson", Model.TutorLesson)
+        </div>
+    </div>
+</section>
+<!-- /teacher details -->

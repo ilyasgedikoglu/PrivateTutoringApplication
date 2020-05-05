@@ -1,0 +1,12 @@
+﻿<aside class="main-sidebar">
+    <section class="sidebar">
+        <ul class="sidebar-menu" data-widget="tree">
+            <li class="header"><center>MENU</center></li>
+            <li> @Html.ActionLink(" Home", "Index", "Admin", new { }, new { @class = "fa fa-circle-o text-blue" })</li>
+            <li> @Html.ActionLink(" Teachers", "GetTeachers", "Admin", new { }, new { @class = "fa fa-circle-o text-red" })</li>
+            <li> @Html.ActionLink(" Students", "GetStudents", "Admin", new { }, new { @class = "fa fa-circle-o text-yellow" })</li>
+            <li> @Html.ActionLink(" Lessons", "GetLessons", "Admin", new { }, new { @class = "fa fa-circle-o text-orange" })</li>
+            <li> @Html.ActionLink(" Register Lessons", "GetRegisterLesson", "Admin", new { }, new { @class = "fa fa-circle-o text-green" })</li>
+        </ul>
+    </section>
+</aside>

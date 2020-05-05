@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <title>Educenter</title>
+
+    <!-- mobile responsive meta -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- ** Plugins Needed for the Project ** -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/educenter/plugins/bootstrap/bootstrap.min.css">
+    <!-- slick slider -->
+    <link rel="stylesheet" href="~/educenter/plugins/slick/slick.css">
+    <!-- themefy-icon -->
+    <link rel="stylesheet" href="~/educenter/plugins/themify-icons/themify-icons.css">
+    <!-- animation css -->
+    <link rel="stylesheet" href="~/educenter/plugins/animate/animate.css">
+    <!-- aos -->
+    <link rel="stylesheet" href="~/educenter/plugins/aos/aos.css">
+    <!-- venobox popup -->
+    <link rel="stylesheet" href="~/educenter/plugins/venobox/venobox.css">
+
+    <!-- Main Stylesheet -->
+    <link href="~/educenter/css/style.css" rel="stylesheet">
+
+    <!--Favicon-->
+    <link rel="shortcut icon" href="~/educenter/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="~/educenter/images/favicon.ico" type="image/x-icon">
+
+</head>
+
+<body>
+
+
+    <!-- header -->
+    <partial name="_headerPartialView" />
+    <!-- /header -->
+
+    @RenderBody()
+
+    <!-- footer -->
+    <partial name="_footerPartialView" />
+    <!-- /footer -->
+    <!-- jQuery -->
+    <script src="~/educenter/plugins/jQuery/jquery.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="~/educenter/plugins/bootstrap/bootstrap.min.js"></script>
+    <!-- slick slider -->
+    <script src="~/educenter/plugins/slick/slick.min.js"></script>
+    <!-- aos -->
+    <script src="~/educenter/plugins/aos/aos.js"></script>
+    <!-- venobox popup -->
+    <script src="~/educenter/plugins/venobox/venobox.min.js"></script>
+    <!-- mixitup filter -->
+    <script src="~/educenter/plugins/mixitup/mixitup.min.js"></script>
+    <!-- google map -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCcABaamniA6OL5YvYSpB3pFMNrXwXnLwU&libraries=places"></script>
+    <script src="~/educenter/plugins/google-map/gmap.js"></script>
+
+    <!-- Main Script -->
+    <script src="~/educenter/js/script.js"></script>
+@RenderSection("Scripts", required: false)
+</body>
+</html>

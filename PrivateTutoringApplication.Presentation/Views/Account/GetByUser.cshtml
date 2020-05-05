@@ -1,0 +1,146 @@
+﻿@model PrivateTutoringApplication.Shared.DTO.KullaniciDTO
+
+@{
+    ViewData["Title"] = "GetByUser";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Personal Information > </a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted">Enter a keyword</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<div>
+    @Html.ActionLink("Update Profile", "Edit", "Account", new { guid = Model.Guid }, new { @class = "mb-4 btn btn-info" })
+    @Html.ActionLink("Delete Account", "Delete", "Account", new { guid = Model.Guid }, new { @class = "mb-4 btn btn-warning" })
+</div>
+<div class="container">
+    <div class="row">
+        <dl>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Ad)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Ad)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Soyad)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Soyad)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.KullaniciAdi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.KullaniciAdi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.TelephoneNumber)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.TelephoneNumber)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.KimlikNo)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.KimlikNo)
+            </dd>
+            <dt class="col-sm-2">
+                <img src="\@Html.DisplayFor(model => model.Resim)" width="150"/>
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Resim)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DogumYeri)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DogumYeri)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.DogumTarihi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.DogumTarihi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Biyografi)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Biyografi)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.CVPath)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.CVPath)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.School)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.School)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UpperSchool)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UpperSchool)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.UpperDepartment)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.UpperDepartment)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Job)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Job)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.GraduationStatus)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.GraduationStatus)
+            </dd>
+            <dt class="col-sm-2">
+                @Html.DisplayNameFor(model => model.Address)
+            </dt>
+            <dd class="col-sm-10">
+                @Html.DisplayFor(model => model.Address)
+            </dd>
+        </dl>
+
+    </div>
+</div>

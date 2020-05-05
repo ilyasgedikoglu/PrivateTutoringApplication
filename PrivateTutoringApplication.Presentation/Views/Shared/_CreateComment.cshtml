@@ -1,0 +1,10 @@
+﻿
+@using (Html.BeginForm("_CreateComment", "LessonComment", FormMethod.Post))
+{
+    <div class="col-12">
+        <textarea name="comment" id="comment" class="form-control mb-4" placeholder="Comment Here..."></textarea>
+    </div>
+    <div class="col-12">
+        <button type="submit" value="send" class="btn btn-primary">post comment</button>
+    </div>
+}

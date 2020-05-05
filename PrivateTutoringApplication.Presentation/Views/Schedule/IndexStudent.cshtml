@@ -1,0 +1,53 @@
+﻿@model IEnumerable<PrivateTutoringApplication.Shared.DTO.ScheduleDTO>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="~/educenter/images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Appointments</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<!-- notice -->
+<section class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <ul class="list-unstyled">
+                    <!-- notice item -->
+                    @foreach (var item in Model)
+                    {
+                        <li class="d-md-table mb-4 w-100 border-bottom hover-shadow">
+                            <div class="d-md-table-cell text-center p-4 bg-primary text-white mb-4 mb-md-0"><span class="h2 d-block">@item.TutorSchedule.LessonStartDate.Day-@item.TutorSchedule.LessonStartDate.Month-@item.TutorSchedule.LessonStartDate.Year</span>@item.TutorSchedule.LessonStartDate.Hour:@item.TutorSchedule.LessonStartDate.Second:@item.TutorSchedule.LessonStartDate.Minute</div>
+                            <div class="d-md-table-cell px-4 vertical-align-middle mb-4 mb-md-0">
+                                <a href="#" class="h4 mb-3 d-block">
+                                    Teacher Info: @item.TutorSchedule.Kullanici.Ad @item.TutorSchedule.Kullanici.Soyad @if (item.TutorSchedule.Kullanici.TelephoneNumber != null)
+                                    {
+                                        @item.TutorSchedule.Kullanici.TelephoneNumber
+                                    }
+                                </a>
+                                    <p class="mb-0">Duration: @item.TutorSchedule.LessonDuration second</p>
+                                    <p class="mb-0">Name: @item.TutorSchedule.Lesson.Name</p>
+                                    <p class="mb-0">Price: @item.TutorSchedule.Lesson.Price</p>
+                                    <p class="mb-0">Address: @item.TutorSchedule.Kullanici.Address</p>
+                                </div>
+                            <div class="d-md-table-cell text-right pr-0 pr-md-4"> @Html.ActionLink("Delete Appointment", "Delete", "Schedule", new { guid = item.Guid }, new { @class = "btn btn-warning" })</div>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

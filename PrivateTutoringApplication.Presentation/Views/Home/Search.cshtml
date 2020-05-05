@@ -1,0 +1,37 @@
+﻿@model PrivateTutoringApplication.Shared.DTO.SearchDTO
+@{
+    ViewData["Title"] = "Search";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Search > </a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted">Enter a keyword</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="section mb-20">
+    <div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ml-auto bg-primary py-5 newsletter-block">
+                    <h3 class="text-white">Search Now</h3>
+                    <form asp-action="SearchKey">
+                        <div class="input-wrapper">
+                            @Html.TextBoxFor(m=>m.SearchKey, null, new { @class = "form-control border-0", @placeholder = "Enter a keyword..." })
+                        </div>
+                        <div>
+                            <input type="submit" value="Search" class="btn btn-primary" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

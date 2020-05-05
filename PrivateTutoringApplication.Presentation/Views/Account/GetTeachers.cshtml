@@ -1,0 +1,49 @@
+﻿@model System.Collections.Generic.IEnumerable<PrivateTutoringApplication.Shared.DTO.KullaniciDTO>
+
+@{
+    ViewData["Title"] = "Teachers";
+    Layout = "~/Views/Shared/_LayoutOther.cshtml";
+}
+
+
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="images/backgrounds/page-title.jpg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="list-inline custom-breadcrumb">
+                    <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="@@page-link">Our teachers</a></li>
+                    <li class="list-inline-item text-white h3 font-secondary @@nasted"></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- /page title -->
+<section class="section">
+    <div data-ref="mixitup-target" class="container">
+        <!-- teacher list -->
+        <div class="row" data-ref="mixitup-container">
+            <!-- teacher -->
+            @foreach (var item in Model)
+            {
+                <div data-ref="mixitup-target" class="col-lg-4 col-sm-6 mb-5 business-study">
+                    <div class="card border-0 rounded-0 hover-shadow">
+                        <img class="card-img-top rounded-0" src="\@item.Resim" alt="teacher">
+                        <div class="card-body">
+                            @Html.ActionLink(item.Ad + item.Soyad, "GetTeacher", new { guid = item.Guid }, new { @class = "card-title" })
+                            <p>@item.Job</p>
+                            <ul class="list-inline">
+                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-facebook"></i></a></li>
+                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-twitter-alt"></i></a></li>
+                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-google"></i></a></li>
+                                <li class="list-inline-item"><a class="text-color" href="#"><i class="ti-linkedin"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</section>

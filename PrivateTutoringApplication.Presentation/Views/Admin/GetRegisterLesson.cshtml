@@ -1,0 +1,70 @@
+﻿@model System.Collections.Generic.IEnumerable<PrivateTutoringApplication.Shared.DTO.ScheduleDTO>
+@{
+    ViewData["Title"] = "GetRegisterLesson";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="content-wrapper">
+    <!-- Main content -->
+    <section class="content">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Registered Lessons</h3>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Student Name-Surname</th>
+                                    <th>Teacher Name-Surname</th>
+                                    <th>Lesson Name</th>
+                                    <th>Lesson Price</th>
+                                    <th>Lesson Start Date</th>
+                                    <th>Lesson Duration</th>
+                                    <th>Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.Id</td>
+                                        <td>@item.Kullanici.Ad @item.Kullanici.Soyad</td>
+                                        <td>@item.TutorSchedule.Kullanici.Ad @item.TutorSchedule.Kullanici.Soyad</td>
+                                        <td>@item.TutorSchedule.Lesson.Name</td>
+                                        <td>@item.TutorSchedule.Lesson.Price</td>
+                                        <td>@item.TutorSchedule.LessonStartDate</td>
+                                        <td>@item.TutorSchedule.LessonDuration</td>
+                                        <td>@item.TutorSchedule.Kullanici.Address</td>
+                                    </tr>
+                                }
+                            </tbody>
+                            <tfoot>
+                                <tr>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!-- /.box -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <!-- /.content -->
+</div>
+
+
+
+
+
+
+
+

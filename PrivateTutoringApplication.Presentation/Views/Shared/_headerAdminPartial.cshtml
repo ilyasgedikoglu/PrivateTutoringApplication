@@ -1,0 +1,39 @@
+﻿<header class="main-header">
+
+    <a href="~/Admin/Index" class="logo">
+        <span class="logo-mini"><b>K</b>LA</span>
+        <span class="logo-lg"><b>KI</b>YASLA</span>
+    </a>
+    <nav class="navbar navbar-static-top">
+        <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button"></a>
+        <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+                <!-- User Account: style can be found in dropdown.less -->
+                <li class="dropdown user user-menu">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <img src="~/view/image/logoo.png" class="user-image" alt="Logo">
+                    </a>
+                    <ul class="dropdown-menu">
+                        <!-- User image -->
+                        <li class="user-header">
+                            <img src="~/view/image/logoo.png" class="img-circle" alt="Admin Resmi">
+                            <p>Güle Güle @User.Identity.Name</p>
+                        </li>
+                        <li class="user-footer">
+                            @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                            {
+                                @Html.AntiForgeryToken()
+                                @*<div class="pull-left">
+                                    <a href="/Home/Index" class="btn btn-primary">Ana Sayfa Giriş</a>
+                                </div>*@
+                                <div class="pull-right">
+                                    <center><a href="javascript:document.getElementById('logoutForm').submit()" class="btn btn-primary">Çıkış</a></center>
+                                </div>
+                            }
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>

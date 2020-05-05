@@ -1,0 +1,29 @@
+﻿@model System.Collections.Generic.IEnumerable<PrivateTutoringApplication.Shared.DTO.TutorLessonDTO>
+<!-- course item -->
+
+@if (Model.Count() == 0)
+{
+    <p>No Lesson</p>
+}
+else
+{
+    @foreach (var item in Model)
+    {
+        <div class="col-lg-4 col-sm-6 mb-5">
+            <div class="card p-0 border-primary rounded-0 hover-shadow">
+                <img class="card-img-top rounded-0" src="\@item.Lesson.Resim" alt="course thumb">
+                <div class="card-body">
+                    <ul class="list-inline mb-2">
+                        <li class="list-inline-item"><i class="ti-calendar mr-1 text-color"></i>@item.EklenmeZamani</li>
+                        <li class="list-inline-item"><a class="text-color" href="#">@item.Lesson.Category</a></li>
+                    </ul>
+                    @Html.ActionLink("Apply Now", "GetLesson", "Lesson", new { guid = item.Guid }, new { @class = "h4 card-title" })
+                    <p class="card-text mb-4">
+                        @item.Lesson.Definition
+                    </p>
+                    @Html.ActionLink("Apply Now", "GetLesson", "Lesson", new { guid = item.Guid }, new { @class = "btn btn-primary btn-sm" })
+                </div>
+            </div>
+        </div>
+    }
+}

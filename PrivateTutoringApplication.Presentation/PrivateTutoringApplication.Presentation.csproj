@@ -1,0 +1,137 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.0" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="5.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Uploads\DefaultPicture\" />
+    <Folder Include="Uploads\Documents\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\educenter\about.html" />
+    <None Include="wwwroot\educenter\blog-single.html" />
+    <None Include="wwwroot\educenter\blog.html" />
+    <None Include="wwwroot\educenter\contact.html" />
+    <None Include="wwwroot\educenter\course-single.html" />
+    <None Include="wwwroot\educenter\courses.html" />
+    <None Include="wwwroot\educenter\css\maps\style.css.map" />
+    <None Include="wwwroot\educenter\css\style.css" />
+    <None Include="wwwroot\educenter\event-single.html" />
+    <None Include="wwwroot\educenter\events.html" />
+    <None Include="wwwroot\educenter\fonts\Futura-Bold.woff" />
+    <None Include="wwwroot\educenter\images\about\about-page.jpg" />
+    <None Include="wwwroot\educenter\images\about\about-us.jpg" />
+    <None Include="wwwroot\educenter\images\about\video-thumb.jpg" />
+    <None Include="wwwroot\educenter\images\backgrounds\page-title.jpg" />
+    <None Include="wwwroot\educenter\images\backgrounds\success-story.jpg" />
+    <None Include="wwwroot\educenter\images\banner\banner-1.jpg" />
+    <None Include="wwwroot\educenter\images\banner\banner-feature.png" />
+    <None Include="wwwroot\educenter\images\blog\blog-single.jpg" />
+    <None Include="wwwroot\educenter\images\blog\post-1.jpg" />
+    <None Include="wwwroot\educenter\images\blog\post-2.jpg" />
+    <None Include="wwwroot\educenter\images\blog\post-3.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-1.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-2.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-3.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-4.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-5.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-6.jpg" />
+    <None Include="wwwroot\educenter\images\courses\course-single.jpg" />
+    <None Include="wwwroot\educenter\images\event-speakers\speaker-1.jpg" />
+    <None Include="wwwroot\educenter\images\event-speakers\speaker-2.jpg" />
+    <None Include="wwwroot\educenter\images\event-speakers\speaker-3.jpg" />
+    <None Include="wwwroot\educenter\images\event-speakers\speaker-4.jpg" />
+    <None Include="wwwroot\educenter\images\events\event-1.jpg" />
+    <None Include="wwwroot\educenter\images\events\event-2.jpg" />
+    <None Include="wwwroot\educenter\images\events\event-3.jpg" />
+    <None Include="wwwroot\educenter\images\events\event-single.jpg" />
+    <None Include="wwwroot\educenter\images\logo.png" />
+    <None Include="wwwroot\educenter\images\research\research-1.jpg" />
+    <None Include="wwwroot\educenter\images\research\research-2.jpg" />
+    <None Include="wwwroot\educenter\images\research\research-3.jpg" />
+    <None Include="wwwroot\educenter\images\research\research-4.jpg" />
+    <None Include="wwwroot\educenter\images\research\research-5.jpg" />
+    <None Include="wwwroot\educenter\images\research\research-6.jpg" />
+    <None Include="wwwroot\educenter\images\scholarship\scholarship-item-1.jpg" />
+    <None Include="wwwroot\educenter\images\scholarship\scholarship-item-2.jpg" />
+    <None Include="wwwroot\educenter\images\scholarship\scholarship-item-3.jpg" />
+    <None Include="wwwroot\educenter\images\scholarship\scholarship.jpg" />
+    <None Include="wwwroot\educenter\images\teacher.jpg" />
+    <None Include="wwwroot\educenter\images\teachers\teacher-1.jpg" />
+    <None Include="wwwroot\educenter\images\teachers\teacher-2.jpg" />
+    <None Include="wwwroot\educenter\images\teachers\teacher-3.jpg" />
+    <None Include="wwwroot\educenter\index.html" />
+    <None Include="wwwroot\educenter\js\script.js" />
+    <None Include="wwwroot\educenter\notice-single.html" />
+    <None Include="wwwroot\educenter\notice.html" />
+    <None Include="wwwroot\educenter\plugins\animate\animate.css" />
+    <None Include="wwwroot\educenter\plugins\aos\aos.css" />
+    <None Include="wwwroot\educenter\plugins\aos\aos.js" />
+    <None Include="wwwroot\educenter\plugins\bootstrap\bootstrap.min.css" />
+    <None Include="wwwroot\educenter\plugins\bootstrap\bootstrap.min.js" />
+    <None Include="wwwroot\educenter\plugins\google-map\gmap.js" />
+    <None Include="wwwroot\educenter\plugins\google-map\images\marker.png" />
+    <None Include="wwwroot\educenter\plugins\jQuery\jquery.min.js" />
+    <None Include="wwwroot\educenter\plugins\mixitup\mixitup.min.js" />
+    <None Include="wwwroot\educenter\plugins\slick\ajax-loader.gif" />
+    <None Include="wwwroot\educenter\plugins\slick\fonts\slick.eot" />
+    <None Include="wwwroot\educenter\plugins\slick\fonts\slick.svg" />
+    <None Include="wwwroot\educenter\plugins\slick\fonts\slick.ttf" />
+    <None Include="wwwroot\educenter\plugins\slick\fonts\slick.woff" />
+    <None Include="wwwroot\educenter\plugins\slick\slick.css" />
+    <None Include="wwwroot\educenter\plugins\slick\slick.min.js" />
+    <None Include="wwwroot\educenter\plugins\themify-icons\fonts\themify.eot" />
+    <None Include="wwwroot\educenter\plugins\themify-icons\fonts\themify.svg" />
+    <None Include="wwwroot\educenter\plugins\themify-icons\fonts\themify.ttf" />
+    <None Include="wwwroot\educenter\plugins\themify-icons\fonts\themify.woff" />
+    <None Include="wwwroot\educenter\plugins\themify-icons\themify-icons.css" />
+    <None Include="wwwroot\educenter\plugins\venobox\venobox.css" />
+    <None Include="wwwroot\educenter\plugins\venobox\venobox.min.js" />
+    <None Include="wwwroot\educenter\research.html" />
+    <None Include="wwwroot\educenter\scholarship.html" />
+    <None Include="wwwroot\educenter\scss\style.scss" />
+    <None Include="wwwroot\educenter\scss\templates\_homepage.scss" />
+    <None Include="wwwroot\educenter\scss\templates\_navigation.scss" />
+    <None Include="wwwroot\educenter\scss\templates\_otherspage.scss" />
+    <None Include="wwwroot\educenter\scss\templates\_slider.scss" />
+    <None Include="wwwroot\educenter\scss\_buttons.scss" />
+    <None Include="wwwroot\educenter\scss\_common.scss" />
+    <None Include="wwwroot\educenter\scss\_mixins.scss" />
+    <None Include="wwwroot\educenter\scss\_typography.scss" />
+    <None Include="wwwroot\educenter\scss\_variables.scss" />
+    <None Include="wwwroot\educenter\teacher-single.html" />
+    <None Include="wwwroot\educenter\teacher.html" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\PrivateTutoringApplication.IRepository\PrivateTutoringApplication.IRepository.csproj" />
+    <ProjectReference Include="..\PrivateTutoringApplication.IService\PrivateTutoringApplication.IService.csproj" />
+    <ProjectReference Include="..\PrivateTutoringApplication.Model\PrivateTutoringApplication.Model.csproj" />
+    <ProjectReference Include="..\PrivateTutoringApplication.Repository\PrivateTutoringApplication.Repository.csproj" />
+    <ProjectReference Include="..\PrivateTutoringApplication.Service\PrivateTutoringApplication.Service.csproj" />
+  </ItemGroup>
+
+
+
+</Project>

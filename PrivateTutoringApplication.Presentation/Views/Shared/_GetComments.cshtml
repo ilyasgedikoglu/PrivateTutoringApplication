@@ -1,0 +1,29 @@
+﻿@model IEnumerable<PrivateTutoringApplication.Shared.DTO.LessonCommentDTO>
+
+@foreach (var item in Model)
+{
+    <div class="col-12">
+        <!-- border -->
+        <div class="col-12 mt-4">
+            <div class="border-bottom border-primary"></div>
+        </div>
+        <br />
+        <ul class="list-inline">
+            <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><span class="font-weight-bold mr-2">Post:</span>@item.Kullanici.Ad @item.Kullanici.Soyad - @item.Kullanici.Email</li>
+            <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light">@item.EklenmeZamani</li>
+            <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-book mr-2"></i>Read 289</li>
+            <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><i class="ti-share mr-2"></i>289</li>
+            <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"><a class="text-light" href="#"><i class="ti-comments mr-2"></i>265</a></li>
+            @if (ViewBag.UserId == item.Kullanici.Id)
+            {
+                <li class="list-inline-item mr-4 mb-3 mb-md-0 text-light"> @Html.ActionLink("Delete", "Delete", "LessonComment", new { guid = @item.Guid }, new { @class = "btn btn-warning" })</li>
+            }
+        </ul>
+    </div>
+    <!-- blog contect -->
+    <div class="col-12 mb-5">
+        <p>
+         @item.Comment
+        </p>
+    </div>
+}
