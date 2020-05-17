@@ -26,121 +26,196 @@
 <div class="container">
     <div class="row">
         <dl>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Ad)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Ad)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Soyad)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Soyad)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.KullaniciAdi)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.KullaniciAdi)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Email)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Email)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.TelephoneNumber)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.TelephoneNumber)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.KimlikNo)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.KimlikNo)
-            </dd>
-            <dt class="col-sm-2">
-                <img src="\@Html.DisplayFor(model => model.Resim)" width="150"/>
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Resim)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DogumYeri)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.DogumYeri)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.DogumTarihi)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.DogumTarihi)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Aciklama)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Aciklama)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Biyografi)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Biyografi)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.CVPath)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.CVPath)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.School)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.School)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.UpperSchool)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UpperSchool)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Department)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Department)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.UpperDepartment)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.UpperDepartment)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Job)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Job)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.GraduationStatus)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.GraduationStatus)
-            </dd>
-            <dt class="col-sm-2">
-                @Html.DisplayNameFor(model => model.Address)
-            </dt>
-            <dd class="col-sm-10">
-                @Html.DisplayFor(model => model.Address)
-            </dd>
-        </dl>
+            @if (Model.Ad != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Ad)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Ad)
+                </dd>
+            }
 
+            @if (Model.Soyad != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Soyad)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Soyad)
+                </dd>
+            }
+
+            @if (Model.KullaniciAdi != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.KullaniciAdi)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.KullaniciAdi)
+                </dd>
+            }
+
+            @if (Model.Email != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Email)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Email)
+                </dd>
+            }
+
+            @if (Model.TelephoneNumber != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.TelephoneNumber)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.TelephoneNumber)
+                </dd>
+            }
+
+            @if (Model.Resim != null)
+            {
+                <dt class="col-sm-2">
+                    <img src="\@Html.DisplayFor(model => model.Resim)" width="150" />
+                </dt>
+                @*<dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Resim)
+                </dd>*@
+            }
+
+            @if (Model.KimlikNo != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.KimlikNo)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.KimlikNo)
+                </dd>
+            }
+
+            @if (Model.DogumYeri != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DogumYeri)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DogumYeri)
+                </dd>
+            }
+
+            @if (Model.DogumTarihi != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.DogumTarihi)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.DogumTarihi)
+                </dd>
+            }
+
+            @if (Model.Aciklama != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Aciklama)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Aciklama)
+                </dd>
+            }
+
+            @if (Model.Biyografi != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Biyografi)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Biyografi)
+                </dd>
+            }
+
+            @if (Model.CVPath != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.CVPath)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.CVPath)
+                </dd>
+            }
+
+            @if (Model.School != null)
+            {
+
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.School)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.School)
+                </dd>
+            }
+
+            @if (Model.UpperSchool != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.UpperSchool)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UpperSchool)
+                </dd>
+            }
+
+            @if (Model.Department != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Department)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Department)
+                </dd>
+            }
+
+            @if (Model.UpperDepartment != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.UpperDepartment)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.UpperDepartment)
+                </dd>
+            }
+
+            @if (Model.Job != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Job)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Job)
+                </dd>
+            }
+
+            @if (Model.GraduationStatus != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.GraduationStatus)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.GraduationStatus)
+                </dd>
+            }
+
+            @if (Model.Address != null)
+            {
+                <dt class="col-sm-2">
+                    @Html.DisplayNameFor(model => model.Address)
+                </dt>
+                <dd class="col-sm-10">
+                    @Html.DisplayFor(model => model.Address)
+                </dd>
+            }
+        </dl>
     </div>
 </div>

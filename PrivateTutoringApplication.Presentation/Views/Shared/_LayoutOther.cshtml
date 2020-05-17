@@ -36,8 +36,8 @@
 
 
     <!-- header -->
-    <partial name="_headerPartialView" />
-    <!-- /header -->
+    @Html.Partial("_headerPartialView", null);
+<!-- /header -->
 
     @RenderBody()
 
@@ -62,6 +62,6 @@
 
     <!-- Main Script -->
     <script src="~/educenter/js/script.js"></script>
-@RenderSection("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

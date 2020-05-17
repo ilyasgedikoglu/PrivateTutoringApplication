@@ -20,12 +20,14 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         private readonly ITutorScheduleService _tutorScheduleService;
         private readonly ITutorLessonService _tutorLessonService;
         private readonly ILessonService _lessonService;
+        private readonly IKullaniciService _kullaniciService;
 
-        public TutorScheduleController(ITutorScheduleService tutorScheduleService, ILessonService lessonService, ITutorLessonService tutorLessonService)
+        public TutorScheduleController(ITutorScheduleService tutorScheduleService, ILessonService lessonService, ITutorLessonService tutorLessonService, IKullaniciService kullaniciService)
         {
             _tutorScheduleService = tutorScheduleService;
             _lessonService = lessonService;
             _tutorLessonService = tutorLessonService;
+            _kullaniciService = kullaniciService;
         }
 
         [HttpGet]

@@ -24,6 +24,19 @@
                         </li>
                         <li class="list-inline-item">@Html.ActionLink("Student Register", "StudentRegister", "Account", new { }, new { @class = "text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" })</li>
                         <li class="list-inline-item">@Html.ActionLink("Teacher Register", "TeacherRegister", "Account", new { }, new { @class = "text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" })</li>
+
+                        @if (User.Claims.Any())
+                        {
+                            <li class="list-inline-item">
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm" }))
+                                {
+                                    @Html.AntiForgeryToken()
+                                    <div>
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">LogOut</a>
+                                    </div>
+                                }
+                            </li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -33,7 +46,7 @@
     <div class="navigation w-100">
         <div class="container">
             <nav class="navbar navbar-expand-lg navbar-light p-0">
-                <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="logo"></a>
+                <a class="navbar-brand" href="~/Home/Index"><img src="images/logo.png" alt="logo"></a>
                 <button class="navbar-toggler rounded-0" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -56,21 +69,24 @@
                         <li class="nav-item @@events">
                             @Html.ActionLink("EVENTS", "Index", "Home", new { }, new { @class = "nav-link" })
                         </li>
-                        <li class="nav-item dropdown view">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                               aria-haspopup="true" aria-expanded="false">
-                                Pages
-                            </a>
-
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                @Html.ActionLink("Personel Information", "GetByUser", "Account", new { }, new { @class = "dropdown-item" })
-
-                                @Html.ActionLink("My Appointments", "GetAppointments", "Schedule", new { }, new { @class = "dropdown-item" })
-                            </div>
-                        </li>
                         <li class="nav-item @@contact">
                             @Html.ActionLink("CONTACT", "Contact", "Home", new { }, new { @class = "nav-link" })
                         </li>
+                        @if (User.Claims.Any())
+                        {
+                            <li class="nav-item dropdown view">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                                   aria-haspopup="true" aria-expanded="false">
+                                    MENU
+                                </a>
+
+                                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    @Html.ActionLink("Personel Information", "GetByUser", "Account", new { }, new { @class = "dropdown-item" })
+
+                                    @Html.ActionLink("My Appointments", "GetAppointments", "Schedule", new { }, new { @class = "dropdown-item" })
+                                </div>
+                            </li>
+                        }
                     </ul>
                 </div>
             </nav>

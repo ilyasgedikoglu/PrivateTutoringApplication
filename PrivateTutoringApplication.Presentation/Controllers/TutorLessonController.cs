@@ -16,10 +16,12 @@ namespace PrivateTutoringApplication.Presentation.Controllers
     public class TutorLessonController : Controller
     {
         private readonly ITutorLessonService _tutorLessonService;
+        private readonly IKullaniciService _kullaniciService;
 
-        public TutorLessonController(ITutorLessonService tutorLessonService)
+        public TutorLessonController(ITutorLessonService tutorLessonService, IKullaniciService kullaniciService)
         {
             _tutorLessonService = tutorLessonService;
+            _kullaniciService = kullaniciService;
         }
 
         [HttpGet]

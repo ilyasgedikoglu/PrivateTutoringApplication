@@ -23,6 +23,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
             _lessonCommentService = lessonCommentService;
             Configuration = configuration;
             _lessonService = lessonService;
+
         }
 
         [Authorize]
