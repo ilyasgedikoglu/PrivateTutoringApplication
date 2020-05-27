@@ -81,7 +81,9 @@ namespace PrivateTutoringApplication.Presentation.Controllers
             {
                 var claims = new List<Claim>
                 {
-                    new Claim(ClaimTypes.Name, user.Id.ToString())
+                    new Claim(ClaimTypes.Name, user.Id.ToString()),
+                    new Claim(ClaimTypes.NameIdentifier, user.Ad + " " + user.Soyad),
+                    new Claim(ClaimTypes.Role, user.YetkiId.ToString())
                 };
 
                 var userIdentity = new ClaimsIdentity(claims, "login");

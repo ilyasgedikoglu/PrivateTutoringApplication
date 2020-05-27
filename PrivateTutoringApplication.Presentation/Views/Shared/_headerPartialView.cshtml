@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Http
+﻿@using System.Security.Claims
+@using Microsoft.AspNetCore.Http
 <!-- header -->
 <header class="fixed-top header">
     <!-- top header -->
@@ -16,6 +17,12 @@
                 </div>
                 <div class="col-lg-8 text-center text-lg-right">
                     <ul class="list-inline">
+                        @if (User.Claims.Any())
+                        {
+                            <li class="list-inline-item">
+                                <b>Welcome @User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier).Value</b>
+                            </li>
+                        }
                         <li class="list-inline-item">
                             @Html.ActionLink("Search", "Search", "Home", new { }, new { @class = "text-uppercase text-color p-sm-2 py-2 px-0 d-inline-block" })
                         </li>
@@ -84,6 +91,13 @@
                                     @Html.ActionLink("Personel Information", "GetByUser", "Account", new { }, new { @class = "dropdown-item" })
 
                                     @Html.ActionLink("My Appointments", "GetAppointments", "Schedule", new { }, new { @class = "dropdown-item" })
+
+                                    @if (@Convert.ToInt32(User.Claims.FirstOrDefault(x => x.Type == ClaimTypes.Role).Value) == 3)
+                                    {
+                                        @Html.ActionLink("Add Lesson", "Create", "Lesson", new { }, new { @class = "dropdown-item" })
+
+                                        @Html.ActionLink("My Lessons", "GetTutorLessons", "Lesson", new { }, new { @class = "dropdown-item" })
+                                    }
                                 </div>
                             </li>
                         }

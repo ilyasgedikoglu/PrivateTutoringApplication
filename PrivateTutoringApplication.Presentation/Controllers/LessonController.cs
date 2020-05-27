@@ -23,7 +23,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
         private readonly ITutorLessonService _tutorLessonService;
         private readonly ILessonCommentService _lessonCommentService;
         private readonly IKullaniciService _kullaniciService;
-        
+
         public LessonController(ILessonService lessonService, ITutorLessonService tutorLessonService, ILessonCommentService lessonCommentService, IKullaniciService kullaniciService)
         {
             _lessonService = lessonService;
@@ -54,7 +54,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
 
             }
 
-            TutorLessonCommentCO model = new TutorLessonCommentCO(); 
+            TutorLessonCommentCO model = new TutorLessonCommentCO();
             var lesson = _tutorLessonService.GetByGuid(guid);
             if (lesson == null)
             {
@@ -131,7 +131,7 @@ namespace PrivateTutoringApplication.Presentation.Controllers
                     await file.CopyToAsync(stream);
                 }
             }
-            
+
             model.Resim = path;
             model.EkleyenId = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value)
                 .SingleOrDefault());
@@ -149,11 +149,11 @@ namespace PrivateTutoringApplication.Presentation.Controllers
                 EklenmeZamani = DateTime.Now,
                 KullaniciId = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value)
                     .SingleOrDefault()),
-            LessonId = lessonId,
+                LessonId = lessonId,
                 Silindi = false,
                 EkleyenId = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value)
                     .SingleOrDefault())
-        };
+            };
             _tutorLessonService.Create(tutorLesson);
 
             var user = _kullaniciService.GetById(Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Name)
@@ -236,6 +236,20 @@ namespace PrivateTutoringApplication.Presentation.Controllers
             }
 
             return RedirectToAction("GetTeacher", new RouteValueDictionary(new { controller = "Account", action = "GetTeacher", guid = user.Guid }));
+        }
+
+        [HttpGet]
+        [Authorize]
+        public IActionResult GetTutorLessons()
+        {
+            var userId = Convert.ToInt32(User.Claims.Where(c => c.Type == ClaimTypes.Name).Select(c => c.Value)
+                .SingleOrDefault());
+
+            var user = _kullaniciService.GetById(userId);
+
+            var tutorLessons = _tutorLessonService.GetByLessons(user.Guid);
+
+            return View(tutorLessons);
         }
     }
 }
